@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  one_v: MyString
+  all: MyString
+  DCHH: MyString
+  GTA: MyString
+  HET: MyString
+  OMH: MyString
+  PDN: MyString
+  PEG: MyString
+  date: 2010-10-24
+
+two:
+  name: MyString
+  one_v: MyString
+  all: MyString
+  DCHH: MyString
+  GTA: MyString
+  HET: MyString
+  OMH: MyString
+  PDN: MyString
+  PEG: MyString
+  date: 2010-10-24

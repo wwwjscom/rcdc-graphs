@@ -1,0 +1,57 @@
+<%= form_for(@market) do |f| %>
+  <% if @market.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@market.errors.count, "error") %> prohibited this market from being saved:</h2>
+
+      <ul>
+      <% @market.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :one_v %><br />
+    <%= f.text_field :one_v %>
+  </div>
+  <div class="field">
+    <%= f.label :all %><br />
+    <%= f.text_field :all %>
+  </div>
+  <div class="field">
+    <%= f.label :DCHH %><br />
+    <%= f.text_field :DCHH %>
+  </div>
+  <div class="field">
+    <%= f.label :GTA %><br />
+    <%= f.text_field :GTA %>
+  </div>
+  <div class="field">
+    <%= f.label :HET %><br />
+    <%= f.text_field :HET %>
+  </div>
+  <div class="field">
+    <%= f.label :OMH %><br />
+    <%= f.text_field :OMH %>
+  </div>
+  <div class="field">
+    <%= f.label :PDN %><br />
+    <%= f.text_field :PDN %>
+  </div>
+  <div class="field">
+    <%= f.label :PEG %><br />
+    <%= f.text_field :PEG %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<h1>Listing markets</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>One v</th>
+    <th>All</th>
+    <th>Dchh</th>
+    <th>Gta</th>
+    <th>Het</th>
+    <th>Omh</th>
+    <th>Pdn</th>
+    <th>Peg</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @markets.each do |market| %>
+  <tr>
+    <td><%= market.name %></td>
+    <td><%= market.one_v %></td>
+    <td><%= market.all %></td>
+    <td><%= market.DCHH %></td>
+    <td><%= market.GTA %></td>
+    <td><%= market.HET %></td>
+    <td><%= market.OMH %></td>
+    <td><%= market.PDN %></td>
+    <td><%= market.PEG %></td>
+    <td><%= market.date %></td>
+    <td><%= link_to 'Show', market %></td>
+    <td><%= link_to 'Edit', edit_market_path(market) %></td>
+    <td><%= link_to 'Destroy', market, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Market', new_market_path %>

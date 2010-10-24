@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start_date: 2010-10-24
+  end_date: 2010-10-24
+  graph_type: MyString
+
+two:
+  start_date: 2010-10-24
+  end_date: 2010-10-24
+  graph_type: MyString

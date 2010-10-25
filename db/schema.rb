@@ -10,27 +10,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101024155908) do
+ActiveRecord::Schema.define(:version => 20101024213533) do
 
-  create_table "graphs", :force => true do |t|
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "graph_type"
+  create_table "markets", :force => true do |t|
+    t.string   "name"
+    t.string   "supply_host"
+    t.string   "col_1"
+    t.string   "col_2"
+    t.string   "total"
+    t.date     "for_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "markets", :force => true do |t|
-    t.string   "name"
-    t.string   "one_v"
-    t.string   "all"
-    t.string   "DCHH"
-    t.string   "GTA"
-    t.string   "HET"
-    t.string   "OMH"
-    t.string   "PDN"
-    t.string   "PEG"
-    t.date     "date"
+  create_table "report2s", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "graph_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

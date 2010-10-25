@@ -2,15 +2,11 @@ class CreateMarkets < ActiveRecord::Migration
   def self.up
     create_table :markets do |t|
       t.string :name
-      t.string :one_v
-      t.string :all
-      t.string :DCHH
-      t.string :GTA
-      t.string :HET
-      t.string :OMH
-      t.string :PDN
-      t.string :PEG
-      t.date :date
+      t.string :supply_host
+      t.string :col_1
+      t.string :col_2
+      t.string :total
+      t.date :for_date
 
       t.timestamps
     end

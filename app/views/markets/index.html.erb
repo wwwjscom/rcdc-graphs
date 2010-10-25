@@ -3,15 +3,11 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>One v</th>
-    <th>All</th>
-    <th>Dchh</th>
-    <th>Gta</th>
-    <th>Het</th>
-    <th>Omh</th>
-    <th>Pdn</th>
-    <th>Peg</th>
-    <th>Date</th>
+    <th>Supply host</th>
+    <th>Col 1</th>
+    <th>Col 2</th>
+    <th>Total</th>
+    <th>For date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,15 +16,11 @@
 <% @markets.each do |market| %>
   <tr>
     <td><%= market.name %></td>
-    <td><%= market.one_v %></td>
-    <td><%= market.all %></td>
-    <td><%= market.DCHH %></td>
-    <td><%= market.GTA %></td>
-    <td><%= market.HET %></td>
-    <td><%= market.OMH %></td>
-    <td><%= market.PDN %></td>
-    <td><%= market.PEG %></td>
-    <td><%= market.date %></td>
+    <td><%= market.supply_host %></td>
+    <td><%= market.col_1 %></td>
+    <td><%= market.col_2 %></td>
+    <td><%= market.total %></td>
+    <td><%= market.for_date %></td>
     <td><%= link_to 'Show', market %></td>
     <td><%= link_to 'Edit', edit_market_path(market) %></td>
     <td><%= link_to 'Destroy', market, :confirm => 'Are you sure?', :method => :delete %></td>

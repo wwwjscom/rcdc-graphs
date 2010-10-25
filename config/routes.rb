@@ -1,5 +1,5 @@
 OrbitzGraphs::Application.routes.draw do
-  resources :graphs
+  resources :report2s
 
   resources :markets
 

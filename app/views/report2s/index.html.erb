@@ -1,0 +1,63 @@
+<h1>Listing report2s</h1>
+
+<%= form_for(@report2) do |f| %>
+  <% if @report2.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report2.errors.count, "error") %> prohibited this report2 from being saved:</h2>
+
+      <ul>
+      <% @report2.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :graph_type %><br />
+    <%= f.text_field :graph_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+<table>
+  <tr>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Graph type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @report2s.each do |report2| %>
+  <tr>
+    <td><%= report2.start_date %></td>
+    <td><%= report2.end_date %></td>
+    <td><%= report2.graph_type %></td>
+    <td><%= link_to 'Show', report2 %></td>
+    <td><%= link_to 'Edit', edit_report2_path(report2) %></td>
+    <td><%= link_to 'Destroy', report2, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+<%= link_to 'New Report2', new_report2_path %>

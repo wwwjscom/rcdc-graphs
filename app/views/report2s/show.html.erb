@@ -1,0 +1,107 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Start date:</b>
+  <%= @report2.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @report2.end_date %>
+</p>
+
+<p>
+  <b>Graph type:</b>
+  <%= @report2.graph_type %>
+</p>
+
+    <style type="text/css">
+
+#fig {
+  width: 580px;
+  height: 740px;
+}
+
+.title, .subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.subtitle {
+  float: right;
+  color: #999;
+}
+
+.footer {
+  padding-top: 10px;
+  text-align: right;
+}
+
+    </style>
+  </head>
+  <body><div id="center"><div id="fig">
+    <script type="text/javascript+protovis">	
+	
+	var nba = <%= sanitize(@js2) %>
+
+	/* The cell dimensions. */
+	var w = 30, h = 30;
+
+/* Convert from tabular format to array of objects. */
+var cols = nba.shift();
+nba = nba.map(function(d) pv.dict(cols, function() d[this.index]));
+cols.shift();
+
+/* The color scale ranges 3 standard deviations in each direction. */
+var x = pv.dict(cols, function(f) pv.mean(nba, function(d) d[f])),
+    s = pv.dict(cols, function(f) pv.deviation(nba, function(d) d[f])),
+ fill = pv.dict(cols, function(f) pv.Scale.linear()
+        .domain(-3 * s[f] + x[f], 3 * s[f] + x[f])
+        .range("white", "steelblue"));
+
+var vis = new pv.Panel()
+    .width(cols.length * w)
+    .height(nba.length * h)
+    .top(100)
+    .left(350);
+
+vis.add(pv.Panel)
+    .data(cols)
+    .left(function() this.index * w)
+    .width(w)
+  .add(pv.Panel)
+    .data(nba)
+    .top(function() this.index * h)
+    .height(h)
+    .fillStyle(function(d, f) fill[f](d[f]))
+    .strokeStyle("white")
+    .lineWidth(1)
+    .antialias(false)
+    .title(function(d, f) d.Market + "'s " + f + ": " + d[f]);
+
+vis.add(pv.Label)
+    .data(cols)
+    .left(function() this.index * w + w / 2)
+    .textAngle(-Math.PI / 2)
+    .textBaseline("middle");
+
+vis.add(pv.Label)
+    .data(nba)
+    .top(function() this.index * h + h / 2)
+    .textAlign("right")
+    .textBaseline("middle")
+    .text(function(d) d.Market);
+
+vis.render();
+
+    </script>
+  </div></div>
+
+
+
+
+
+
+<%= link_to 'Edit', edit_report2_path(@report2) %> |
+<%= link_to 'Back', report2s_path %>
